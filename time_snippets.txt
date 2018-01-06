@@ -1,0 +1,55 @@
+This is a collection of time based routines. Date::Calc and Date::Manip are useful, but sometimes it is easier to do it yourself.
+
+
+#######################################################################
+# Check if leap year and assign array of dates for the months
+# Note @days[1] is for Jan
+
+my $year = '20100609';
+
+
+my ( $y, $m, $d ) = unpack( "A4 A2 A2", $year );
+    if ( 0 == $y % 4 and 0 != $y % 100 or 0 == $y % 400 ) {
+        @days = qw/0 31 29 31 30 31 30 31 31 30 31 30 31/;
+
+    }
+    else {
+        @days = qw/0 31 28 31 30 31 30 31 31 30 31 30 31/;
+
+    }
+#######################################################################
+
+my @months = qw/0 Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec/;
+
+my %months = (
+    1  => 'Jan',
+    2  => 'Feb',
+    3  => 'Mar',
+    4  => 'Apr',
+    5  => 'May',
+    6  => 'Jun',
+    7  => 'Jul',
+    8  => 'Aug',
+    9  => 'Sep',
+    10 => 'Oct',
+    11 => 'Nov',
+    12 => 'Dec',
+);
+
+
+#######################################################################
+
+   my @dt = reverse +(localtime)[0..5];
+   $dt[0] += 1900;  # year
+   $dt[1] += 1;  # month
+   printf qq{%s-%02d-%02d %02d:%02d:%02d\n}, @dt;
+
+2016-11-14 20:07:14
+
+#######################################################################
+
+#######################################################################
+
+#######################################################################
+
+

@@ -1,0 +1,27 @@
+#!/usr/bin/perl
+
+use XML::Simple;
+use utf8;
+#use Data::Dumper; #For debugging
+use strict;
+
+
+my $ab_dir = '/home/owen/.claws-mail.bak/addrbook';
+my $AB = 'addrbook-0000';
+foreach my $bn (21 .. 25){
+
+my $xml = new XML::Simple( KeyAttr => [], ForceArray => 1 );
+
+my $data = $xml->XMLin("$ab_dir/$AB$bn.xml");    # In form 'addrbook-000006.xml' etc.
+
+#print Dumper($data); #For debugging
+open my $AB, ">>", "/home/owen/AB" or die "cant open AB for writing $!\n";
+
+
+
+foreach my $d ( @{ $data->{person} } ) {
+    print $AB $d->{cn} . "\t";
+    print $AB $d->{'address-list'}[0]->{'address'}[0]->{'email'} . "\n";
+}
+
+}
