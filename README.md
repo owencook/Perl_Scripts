@@ -6,6 +6,8 @@ cm_address_extract : Extracts email addresses from the Claws-mail address book
 
 otp.pl : Generate an alphabet table to use with a one time pad
 
+otp-2.pl : Generate and format random characters like as for a otp
+
 Read.vmsg.pl : Reads txt messages from mobile phones VMSG files
 
 snakesLadders.pl : Simulation of a Snakes (Chutes) and Ladder game
