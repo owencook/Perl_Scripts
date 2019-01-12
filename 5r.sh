@@ -17,6 +17,23 @@
 #                                                                         *
 #**************************************************************************
 
+
+
+if [ -e /dev/chaoskey1 ]
+then
+  RNG="/dev/chaoskey1"
+else
+  if [ /dev/chaoskey2 ]
+  then
+    RNG="/dev/chaoskey2"
+  else
+    RNG="/dev/random"
+  fi
+fi
+
+# RNG="/dev/[your random device]"    # The above is for my setup
+
+
 if [ -e ./code ];
 then
   rm ./code
@@ -38,11 +55,12 @@ do
   do
     
     #	tr -c -d 0-9a-zA-Z < /dev/random | head -c  50 > 5r.txt
-    tr -c -d 0-9a-zA-Z < /dev/chaoskey1 | head -c  50 > ./$i.txt
+    tr -c -d 0-9A-Z <  $RNG | head -c  50 > ./$i.txt
     
     sed  's/\(.....\)/\1 /g' ./$i.txt >> code
     echo -e  >> code
   done
-  
-  
+  currentuser=$(who | awk '{print $1}')
+  cp code /home/owen/5rcode
+  chown $currentuser:$currentuser /home/owen/5rcode
 done
