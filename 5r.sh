@@ -14,7 +14,8 @@
 #									  *
 #   Change 0-9a-zA-Z to 0-9 if you just want digits etc.                  *
 #   /dev/[your random device] requires root to operate                    *
-#                                                                         *
+#   /dev/urandom can be run as user                                       *
+#   									  *
 #**************************************************************************
 
 
@@ -23,14 +24,13 @@ if [ -e /dev/chaoskey1 ]
 then
   RNG="/dev/chaoskey1"
 else
-  if [ /dev/chaoskey2 ]
+  if [ -e /dev/chaoskey2 ]
   then
     RNG="/dev/chaoskey2"
   else
-    RNG="/dev/random"
+    RNG="/dev/urandom"
   fi
 fi
-
 # RNG="/dev/[your random device]"    # The above is for my setup
 
 
@@ -54,8 +54,8 @@ do
   for i in 1 2 3 4 5
   do
     
-    #	tr -c -d 0-9a-zA-Z < /dev/random | head -c  50 > 5r.txt
-    tr -c -d 0-9A-Z <  $RNG | head -c  50 > ./$i.txt
+    tr -c -d 0-9A-Z < $RNG | head -c  50 > ./$i.txt
+    #tr -c -d 0-9a-zA-Z < $RNG | head -c  50 > ./$i.txt    #Upper and Lower case plust digits 
     
     sed  's/\(.....\)/\1 /g' ./$i.txt >> code
     echo -e  >> code
