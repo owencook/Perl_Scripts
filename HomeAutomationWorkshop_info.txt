@@ -1,0 +1,21 @@
+Content for the LCA2019 Home Automation Workshop
+
+https://github.com/InfernoEmbedded/HomeAutomationWorkshop/
+
+===============================================================================
+In particular, read
+
+https://github.com/InfernoEmbedded/HomeAutomationWorkshop/blob/master/Prerequisites.md
+===============================================================================
+
+The SD card image used during the workshop. It's vanilla HassOS, 
+plus the OWFS gateway & SSH server baked in.
+
+https://github.com/InfernoEmbedded/HomeAutomationWorkshop/releases/tag/lca2019
+===============================================================================
+
+Home Assistant BoF  page on the wiki, that describes some of the resources mentioned at the BoF
+
+https://2019.linux.conf.au/wiki/HomeAssistant_BoF 
+===============================================================================
+
