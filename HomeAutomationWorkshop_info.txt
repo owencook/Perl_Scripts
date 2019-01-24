@@ -17,5 +17,9 @@ https://github.com/InfernoEmbedded/HomeAutomationWorkshop/releases/tag/lca2019
 Home Assistant BoF  page on the wiki, that describes some of the resources mentioned at the BoF
 
 https://2019.linux.conf.au/wiki/HomeAssistant_BoF 
+
+This will lead to a good set of beginners type information at;
+
+https://www.awesome-ha.com/
 ===============================================================================
 
