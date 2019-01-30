@@ -16,3 +16,4 @@ time_snippets.txt : Time manipulation snippets because I always forget
 
 Iterations_chart.png : LibreOffice chart of 20000 and 2000 iterations of the Snakes and Ladeers simulation.
 
+head-tails.sh : Program written to check randomness between /dev/urandom and chaoskey"
