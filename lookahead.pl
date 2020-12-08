@@ -9,7 +9,6 @@ while (<DATA>) {
     if ( $line =~ / \d+[(?=\sUSD)|(?=USD)]/ ) { print "$line" }
 
 }
-
 __DATA__
 no0w it is 234USD
 it is USD only
