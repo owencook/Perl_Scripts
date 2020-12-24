@@ -23,3 +23,6 @@ head-tails.sh : Program written to check randomness between /dev/urandom and cha
 unicode.pl : Regex to extract unicode characters
 
 lookahead.pl : regex to look at "Look ahead"
+
+ib4e.pl : Regular Expression on Twitter had "i before e except after c: (?<!c)ie // example of negative look-behind"
+          but the only way I could make it work was with this (?<=c)ei
