@@ -6,6 +6,7 @@ use utf8;
 use strict;
 
 
+
 my $ab_dir = '/home/owen/.claws-mail.bak/addrbook';
 my $AB = 'addrbook-0000';
 foreach my $bn (21 .. 25){
