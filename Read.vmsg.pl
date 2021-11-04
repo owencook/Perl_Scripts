@@ -17,6 +17,7 @@ while (<DATA>) {
         next if ( $letter =~ /"QUOTED"/ );
         next if ( $letter =~ /"UTF"/ );
         printf( "%c", hex($letter) );
+
     }
 }
 print "\n";
