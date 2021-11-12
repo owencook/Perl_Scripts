@@ -17,5 +17,6 @@ foreach my $i ( 1 .. $n ) {
     print "$first  @alpha\n";
 
     push( @alpha, shift @alpha );
+
 }
 
